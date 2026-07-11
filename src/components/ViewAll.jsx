@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import axios from 'axios'
+import NavigationBar from './NavigationBar'
 
 const ViewAll = () => {
 
@@ -14,7 +15,7 @@ const ViewAll = () => {
     )
     const fetchData = () => {
 
-        axios.get("http://192.168.33.245:5001/api/courses").then(
+        axios.get("https://host-demo-app.onrender.com/api/courses").then(
 
             (response) => {
 
@@ -36,7 +37,7 @@ const ViewAll = () => {
     )
   return (
     <div>
-        
+        <NavigationBar />
 <div className="container">
     <div className="row g-3">
         <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -52,7 +53,7 @@ const ViewAll = () => {
                     <div className="col col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
                     
                     <div class="card h-100">
-  <img src={value.image} class="card-img-top" alt="..."/>
+  
   <div class="card-body">
     <h5 class="card-title">{value.course_name}</h5>
     <p class="card-text">{value.created_at}</p>
